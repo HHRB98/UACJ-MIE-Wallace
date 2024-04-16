@@ -1,6 +1,6 @@
 # Tiny Tapeout project information
 project:
-  title:        "Wallace multiplier"      # 
+  title:        "UACJ-Wallace multiplier"      # 
   author:       "UACJ Group A"      # 
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "Wallace multiplier"      # wallace multiplier
