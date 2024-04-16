@@ -31,9 +31,9 @@ module tb ();
       .VGND(1'b0),
 `endif
 
-      .a  (ui_in),    // Dedicated inputs
+      .A  (ui_in),    // Dedicated inputs
       .prod (uo_out),   // Dedicated outputs
-      .b (uio_in),   // IOs: Input path
+      .B (uio_in),   // IOs: Input path
       .uio_out(uio_out),  // IOs: Output path
       .uio_oe (uio_oe),   // IOs: Enable path (active high: 0=input, 1=output)
       .ena    (ena),      // enable - goes high when design is selected
