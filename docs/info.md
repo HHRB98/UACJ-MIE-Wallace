@@ -13,8 +13,8 @@ This project is center in the implementation of Verilog code for 4 bit Wallace t
 
 ## How to test
 
-Explain how to use your project
+Under test file, a wallace_tb.v code is located, this code is the testbench
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+You do not need any special external hardware.
