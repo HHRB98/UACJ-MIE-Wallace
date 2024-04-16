@@ -54,7 +54,8 @@ assign Data_out_Sum = ha2_sum;
 //The carry's from both the half adders are OR'ed to get the final carry./
 assign Data_out_Carry = ha1_carry | ha2_carry;
 endmodule
-module wallace(A,B,prod);
+
+module tt_um_wallace_hhrb98(A,B,prod);
 //inputs and outputs
 input [3:0] A,B;
 output [7:0] prod;
