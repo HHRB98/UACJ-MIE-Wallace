@@ -9,7 +9,7 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+This project is center in the implementation of Verilog code for 4 bit Wallace tree multiplier. The design uses half adder and full adder Verilog designs. These modules will be instantiated for the implementation 4 bit Wallace multiplier.
 
 ## How to test
 
