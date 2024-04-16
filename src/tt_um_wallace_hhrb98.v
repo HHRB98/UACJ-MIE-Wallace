@@ -59,12 +59,13 @@ module tt_um_wallace_hhrb98(
 //inputs and outputs
   input [3:0] A,B,
   output [7:0] prod,
-  reg clk,
-  reg rst_n,
-  reg ena,
-  reg [7:0] uio_in,
-  wire [7:0] uio_out,
-  wire [7:0] uio_oe
+  input wire clk,
+  input wire rst_n,
+  input wire ena,
+
+  input  wire [7:0] uio_in,   // IOs: Bidirectional Input path
+  output wire [7:0] uio_out,  // IOs: Bidirectional Output path
+  output wire [7:0] uio_oe,   // IOs: Bidirectional Enable path (active high: 0=input, 1=output)
 );
 
 //internal variables.
