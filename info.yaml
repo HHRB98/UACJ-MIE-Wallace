@@ -1,9 +1,9 @@
 # Tiny Tapeout project information
 project:
-  title:        ""      # wallace
-  author:       ""      # UACJ Group A
+  title:        "Wallace multiplier"      # 
+  author:       "UACJ Group A"      # 
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  ""      # wallace multiplier
+  description:  "Wallace multiplier"      # wallace multiplier
   language:     "Verilog" # Verilog
   clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
 
