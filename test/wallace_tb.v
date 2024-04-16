@@ -1,5 +1,5 @@
 `timescale 1ns / 100ps
-`include "wallace.v"
+`include "tt_um_wallace_hhrb98.v"
 module wallace_tb;
 // Inputs
 reg [3:0] A;
