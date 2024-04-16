@@ -55,14 +55,18 @@ assign Data_out_Sum = ha2_sum;
 assign Data_out_Carry = ha1_carry | ha2_carry;
 endmodule
 
-module tt_um_wallace_hhrb98(A,B,prod);
+module tt_um_wallace_hhrb98(
 //inputs and outputs
-input [3:0] A,B;
-output [7:0] prod;
+  input [3:0] A,B,
+  output [7:0] prod,
+  reg clk,
+  reg rst_n,
+  reg ena,
+  reg [7:0] uio_in,
+  wire [7:0] uio_out,
+  wire [7:0] uio_oe
+);
 
-input wire clk;
-input wire ena;
-input wire rst_n;
 //internal variables.
 wire s11,s12,s13,s14,s15,s22,s23,s24,s25,s26,s32,s33,s34,s35,s36,s37;
 wire c11,c12,c13,c14,c15,c22,c23,c24,c25,c26,c32,c33,c34,c35,c36,c37;
