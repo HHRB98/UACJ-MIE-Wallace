@@ -62,7 +62,8 @@ module tt_um_wallace_hhrb98(
   input wire clk,
   input wire rst_n,
   input wire ena,
-
+  input  wire [7:0] ui_in,
+  output  wire [7:0] uo_out,
   input  wire [7:0] uio_in,   // IOs: Bidirectional Input path
   output wire [7:0] uio_out,  // IOs: Bidirectional Output path
   output wire [7:0] uio_oe   // IOs: Bidirectional Enable path (active high: 0=input, 1=output)
