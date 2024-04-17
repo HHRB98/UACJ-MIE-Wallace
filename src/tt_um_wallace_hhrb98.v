@@ -68,6 +68,10 @@ module tt_um_wallace_hhrb98(
   output wire [7:0] uio_oe   // IOs: Bidirectional Enable path (active high: 0=input, 1=output)
 );
 
+always @(posedge clk) begin  
+        uio_out <= uio_in;
+end
+
 //internal variables.
 wire s11,s12,s13,s14,s15,s22,s23,s24,s25,s26,s32,s33,s34,s35,s36,s37;
 wire c11,c12,c13,c14,c15,c22,c23,c24,c25,c26,c32,c33,c34,c35,c36,c37;
