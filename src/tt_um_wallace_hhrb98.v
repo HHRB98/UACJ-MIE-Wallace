@@ -55,22 +55,51 @@ assign Data_out_Sum = ha2_sum;
 assign Data_out_Carry = ha1_carry | ha2_carry;
 endmodule
 
+
 module tt_um_wallace_hhrb98(
-//inputs and outputs
-  input [3:0] A,B,
-  output [7:0] prod,
-  input wire clk,
-  input wire rst_n,
-  input wire ena,
-  input  wire [7:0] ui_in,
-  output  wire [7:0] uo_out,
-  input  wire [7:0] uio_in,   // IOs: Bidirectional Input path
-  output wire [7:0] uio_out,  // IOs: Bidirectional Output path
-  output wire [7:0] uio_oe   // IOs: Bidirectional Enable path (active high: 0=input, 1=output)
+    input  wire [7:0] ui_in,     // Dedicated inputs
+    output wire [7:0] uo_out,    // Dedicated outputs
+    input  wire [7:0] uio_in,    // IOs: Input path
+    output wire [7:0] uio_out,   // IOs: Output path
+    output wire [7:0] uio_oe,    // IOs: Enable path (active high: 0=input, 1=output)
+    input wire        clk,
+    input  wire       ena,       // will go high when the design is enabled
+    input  wire       rst_n      // reset_n - low to reset
 );
 
-always @(posedge clk) begin  
-        uio_out <= uio_in;
+//wire for inputs
+wire [3:0] A,B;
+
+//wire for the output
+wire [7:0] prod;
+
+// Assigning values to output wires
+assign uio_out = 8'b11111111;
+assign uio_oe = 8'b11111111;
+    
+// Extracting bits from input
+assign A = ui_in[3:0];
+assign B = ui_in[7:4];
+
+ // Here we use uio_in without modifying the output
+  wire [7:0] additional_input = uio_in;
+
+  // Wires
+  wire [39:0] w;
+
+// Flip flop
+reg variable; // Changed to reg type
+
+always @(posedge clk or negedge rst_n) begin  
+    if (~rst_n) begin
+        // Reset condition: set variable to 0
+        variable <= 1'b0; // Changed value to 1-bit
+    end else begin
+        // Update variable with a value only when ena is high
+        if (ena) begin
+            variable <= 1'b0; // Assigning 0 to variable when ena is high
+        end
+    end
 end
 
 //internal variables.
@@ -109,4 +138,7 @@ assign prod[4] = s34;
 assign prod[5] = s35;
 assign prod[6] = s36;
 assign prod[7] = s37;
+
+assign uo_out[7:0] = prod[7:0];
+
 endmodule
